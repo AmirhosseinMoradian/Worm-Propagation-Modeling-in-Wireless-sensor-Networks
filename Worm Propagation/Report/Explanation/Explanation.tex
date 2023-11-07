@@ -1,0 +1,61 @@
+\documentclass[a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{color}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\title{َ\textbf{ANS Research Assignment 2}}
+\author{ Professor Sayad\\ Amirhossein Moradian\\  810100467}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\begin{document}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.75]{Figures/UT1}
+	\end{figure}
+	
+	\maketitle
+	
+	\section*{Introduction}	
+	In the following report, we have brought a few reasons and justifications that why the simulation results vary in the questions asked on this research assignment.\\
+	There were two papers which we were asked to plot their models and tell how much different they are. You may find the answers on the following page.
+	\pagebreak
+	
+	
+	To begin with, one may say that in both articles the models do not calculate the number of infected nodes accurately and this is the main reason for both of them.
+	
+	\section{"A modified SI epidemic model for combating virus spread in wireless sensor networks" Model Explanation}
+	
+	In Tang et al's model, due to considering the number of susceptible nodes with the $S(t)$ divided by the total number of nodes formula and also not considering that only a few of the susceptible nodes neighboring the infected nodes have the ability to be infected in in each time slot on top of this there are neighbors out there that are themselves infected. So the model starts to infect the susceptible nodes and this procedure continues from the beginning of the simulation till it's done. Therefore we face overestimation in counting the number of infected nodes in each time slot. and this will result in the models saturation in less than 10 time slots.
+	
+	\section{"An epidemic theoretic framework for vulnerability analysis of broadcast protocols in wireless sensor networks" Model Explanation}
+	
+	The problem with this model is that overestimation is occurred at first an then after a period of time we face underestimation in counting the infected nodes. And respect to $\beta$, it may count less infected nodes. One thing to note is that the less the $\beta$ value, the higher the infected nodes being counted. And this would continue till the whole network is saturated. The reason that this model is corrupted would be at the beginning of the simulation due to the high value of $\beta$, more nodes are being infected with respect to the other case but this will cause problem because after a period of time, a node can not infect its neighboring nodes since most of them have already been infected. And since most of the nodes have been infected it would be hard to find a susceptible node and this would result in a decrease of infection rate in the whole network.
+	\pagebreak
+	
+\end{document}
